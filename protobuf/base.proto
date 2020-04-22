@@ -1,0 +1,114 @@
+syntax = "proto3";
+
+package gopub.protobuf;
+
+option go_package = "github.com/gopub/gox/protobuf/base";
+
+message VoidValue {
+
+}
+
+message BoolValue {
+    bool value = 1;
+}
+
+message Int64Value {
+    int64 value = 1;
+}
+
+message Float64Value {
+    int64 value = 1;
+}
+
+message Int64List {
+    repeated int64 value = 1;
+}
+
+message Float64List {
+    repeated int64 value = 1;
+}
+
+message StringValue {
+    string value = 1;
+}
+
+message StringList {
+    repeated string value = 1;
+}
+
+message Area {
+    double min_lat = 1;
+    double max_lat = 2;
+    double min_lng = 3;
+    double max_lng = 4;
+}
+
+message Point {
+    double x = 1;
+    double y = 2;
+}
+
+message Location {
+    double x = 1;
+    double y = 2;
+    string name = 3;
+    string full_name = 4;
+}
+
+message PhoneNumber {
+    int32 country_code = 1;
+    int64 national_number = 2;
+    string extension = 3;
+}
+
+message FullName {
+    string first_name = 1;
+    string middle_name = 2;
+    string last_name = 3;
+}
+
+message ListQuery {
+    int64 user_id = 1;
+    int64 since = 2;
+    int32 count = 3;
+}
+
+message PageQuery {
+    int64 user_id = 1;
+    int32 page = 2;
+    int32 size = 3;
+}
+
+message SubListQuery {
+    int64 item_id = 1;
+    int32 item_type = 2;
+    int64 since = 3;
+    int32 count = 4;
+}
+
+message SubPageQuery {
+    int64 item_id = 1;
+    int32 item_type = 2;
+    int32 page = 3;
+    int32 size = 4;
+}
+
+enum Gender {
+    Unknown = 0;
+    Male = 1;
+    Female = 2;
+}
+
+message FormItem {
+    string type = 1;
+    string name = 2;
+    repeated string options = 3;
+    repeated string values = 4;
+    bool optional = 5;
+    string display_name = 6;
+    string description = 7;
+}
+
+message Form {
+    repeated FormItem items = 1;
+}
